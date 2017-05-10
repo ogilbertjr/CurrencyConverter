@@ -15,6 +15,8 @@
 		938573DC1EC2AC1E002F79BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938573DA1EC2AC1E002F79BE /* LaunchScreen.storyboard */; };
 		938573E71EC2AC1E002F79BE /* MoniesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938573E61EC2AC1E002F79BE /* MoniesTests.swift */; };
 		938573F21EC2AC1E002F79BE /* MoniesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938573F11EC2AC1E002F79BE /* MoniesUITests.swift */; };
+		938574001EC2AC3F002F79BE /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938573FF1EC2AC3F002F79BE /* Reference.swift */; };
+		938574021EC2AC50002F79BE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938574011EC2AC50002F79BE /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		938573ED1EC2AC1E002F79BE /* MoniesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoniesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		938573F11EC2AC1E002F79BE /* MoniesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoniesUITests.swift; sourceTree = "<group>"; };
 		938573F31EC2AC1E002F79BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		938573FF1EC2AC3F002F79BE /* Reference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
+		938574011EC2AC50002F79BE /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				938573DA1EC2AC1E002F79BE /* LaunchScreen.storyboard */,
 				938573DD1EC2AC1E002F79BE /* Info.plist */,
 				938573D51EC2AC1E002F79BE /* Monies.xcdatamodeld */,
+				938573FF1EC2AC3F002F79BE /* Reference.swift */,
+				938574011EC2AC50002F79BE /* Country.swift */,
 			);
 			path = Monies;
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				938573D71EC2AC1E002F79BE /* Monies.xcdatamodeld in Sources */,
+				938574001EC2AC3F002F79BE /* Reference.swift in Sources */,
 				938573D11EC2AC1D002F79BE /* ViewController.swift in Sources */,
+				938574021EC2AC50002F79BE /* Country.swift in Sources */,
 				938573CF1EC2AC1D002F79BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

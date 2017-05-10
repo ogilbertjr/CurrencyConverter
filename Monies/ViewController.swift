@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 protocol MoniesLanguageSupport {
     func addCurrencyInLanguage(for code: String)
@@ -140,7 +141,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func deleteCurrencyInLanguage(for code: String) {
-        <#code#>
+        
     }
     
     func addCurrencyInLanguage(for code: String) {

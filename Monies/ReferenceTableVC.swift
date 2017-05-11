@@ -10,11 +10,7 @@ import UIKit
 
 
 
-protocol ReferenceTableLanguageSupport {
-    func initializeAvailableCurreniesInLanguage()
-}
-
-class ReferenceTableVC: UITableViewController, ReferenceTableLanguageSupport {
+class ReferenceTableVC: UITableViewController {
     
 
     

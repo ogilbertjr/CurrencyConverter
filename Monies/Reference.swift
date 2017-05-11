@@ -33,7 +33,7 @@ var availableCurrencies = ["AED":"United Arab Emirates Dirham","AFN":"Afghan Afg
 /// Names of countries to be used to access flag files
 let countryNames = ["AED":"UnitedArabEmirates","AFN":"Afghanistan","ALL":"Albania","AMD":"Armenia",
                     "ANG":"NetherlandsAntilles","AOA":"Angola","ARS":"Argentina","AUD":"Australia",
-                    "AWG":"Aruba","AZN":"Azerbaijan","BAM":"BosniaHerzegovina","BBD":"Barbados",
+                    "AWG":"Aruba","AZN":"Azerbaijan","BAM":"Bosnia","BBD":"Barbados",
                     "BDT":"Bangladesh","BGN":"Bulgaria","BHD":"Bahrain","BIF":"Burundi","BMD":"Bermuda",
                     "BND":"Brunei","BOB":"Bolivia","BRL":"Brazil","BSD":"Bahamas","BTN":"Bhutan",
                     "BWP":"Botswana","BYR":"Belarus","BZD":"Belize","CAD":"Canada","CDF":"Congo",
@@ -61,7 +61,7 @@ let countryNames = ["AED":"UnitedArabEmirates","AFN":"Afghanistan","ALL":"Albani
                     "TOP":"Tonga","TRY":"Turkey","TTD":"TrinidadAndTobago","TWD":"Taiwan",
                     "TZS":"Tanzania","UAH":"Ukraine","UGX":"Uganda","UYU":"Uruguay",
                     "UZS":"Uzbekistan","VEF":"Venezuela","VND":"Vietnam","VUV":"Vanuatu",
-                    "WST":"Samoa","XAF":"Chad","XCD":"Grenada","XOF":"IvoryCoast","YER":"Yemen",
+                    "WST":"Samoa","XAF":"CentralAfrica","XCD":"Grenada","XOF":"IvoryCoast","YER":"Yemen",
                     "ZAR":"SouthAfrica","ZMW":"Zambia"]
 
 

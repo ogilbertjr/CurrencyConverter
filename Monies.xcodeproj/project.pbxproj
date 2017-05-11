@@ -22,6 +22,8 @@
 		938574001EC2AC3F002F79BE /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938573FF1EC2AC3F002F79BE /* Reference.swift */; };
 		938574021EC2AC50002F79BE /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938574011EC2AC50002F79BE /* Country.swift */; };
 		938574041EC351FD002F79BE /* ReferenceTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938574031EC351FD002F79BE /* ReferenceTableVC.swift */; };
+		93EAC2C11EC4079700FE6FEF /* ViewControllerES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAC2C01EC4079700FE6FEF /* ViewControllerES.swift */; };
+		93EAC2C31EC4A63200FE6FEF /* ReferenceTableVCES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAC2C21EC4A63200FE6FEF /* ReferenceTableVCES.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,9 @@
 		938573FF1EC2AC3F002F79BE /* Reference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 		938574011EC2AC50002F79BE /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		938574031EC351FD002F79BE /* ReferenceTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceTableVC.swift; sourceTree = "<group>"; };
+		93EAC2BF1EC4072100FE6FEF /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93EAC2C01EC4079700FE6FEF /* ViewControllerES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerES.swift; sourceTree = "<group>"; };
+		93EAC2C21EC4A63200FE6FEF /* ReferenceTableVCES.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferenceTableVCES.swift; sourceTree = "<group>"; };
 		9572C6467E4EC7A3C154AE67 /* Pods-Monies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monies/Pods-Monies.debug.xcconfig"; sourceTree = "<group>"; };
 		A4DF09FF5DFF055370304C1E /* Pods_MoniesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoniesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA67F507C1DC6EDA2BF77C6A /* Pods-MoniesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoniesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoniesUITests/Pods-MoniesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +153,8 @@
 				938574011EC2AC50002F79BE /* Country.swift */,
 				938574031EC351FD002F79BE /* ReferenceTableVC.swift */,
 				931B33E31EC35D4100B844D1 /* CountryCell.swift */,
+				93EAC2C01EC4079700FE6FEF /* ViewControllerES.swift */,
+				93EAC2C21EC4A63200FE6FEF /* ReferenceTableVCES.swift */,
 			);
 			path = Monies;
 			sourceTree = "<group>";
@@ -475,10 +482,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93EAC2C11EC4079700FE6FEF /* ViewControllerES.swift in Sources */,
 				938573D71EC2AC1E002F79BE /* Monies.xcdatamodeld in Sources */,
 				938574041EC351FD002F79BE /* ReferenceTableVC.swift in Sources */,
 				938574001EC2AC3F002F79BE /* Reference.swift in Sources */,
 				938573D11EC2AC1D002F79BE /* ViewController.swift in Sources */,
+				93EAC2C31EC4A63200FE6FEF /* ReferenceTableVCES.swift in Sources */,
 				938574021EC2AC50002F79BE /* Country.swift in Sources */,
 				938573CF1EC2AC1D002F79BE /* AppDelegate.swift in Sources */,
 				931B33E41EC35D4100B844D1 /* CountryCell.swift in Sources */,
@@ -521,6 +530,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				938573D31EC2AC1E002F79BE /* Base */,
+				93EAC2BF1EC4072100FE6FEF /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -540,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -591,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

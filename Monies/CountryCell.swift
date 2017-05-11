@@ -16,7 +16,7 @@ class CountryCell: UITableViewCell {
     
     @IBOutlet weak var exchangeRateLabel: UILabel!
     
-    var country: Country?
+    //var country: Country?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +25,8 @@ class CountryCell: UITableViewCell {
     
     func configureCell (country: Country) {
         flagView.image = UIImage(named: country.name)
-        currencyLabel.text = "\(country.currency)"
-        exchangeRateLabel.text = "\(country.symbol)\(country.rate)"
+        currencyLabel.text = "\(country.currency!)"
+        exchangeRateLabel.text = "\(country.rate!)"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

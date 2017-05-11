@@ -101,7 +101,7 @@
                             <constraint firstAttribute="trailing" secondItem="ada-FU-deR" secondAttribute="trailing" id="wgU-w7-ZkP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Rates" id="P1E-s8-2H4"/>
+                    <tabBarItem key="tabBarItem" title="Rates" image="World" selectedImage="World" id="P1E-s8-2H4"/>
                     <connections>
                         <outlet property="tableView" destination="ada-FU-deR" id="2C3-uI-ee8"/>
                     </connections>
@@ -133,7 +133,7 @@
                             <outlet property="delegate" destination="Ftx-5a-uZ4" id="Uhd-sI-4AD"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Reference" id="t0u-s1-f6l"/>
+                    <tabBarItem key="tabBarItem" title="Reference" image="List" selectedImage="List" id="t0u-s1-f6l"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rrQ-rD-LND" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,4 +160,8 @@
             <point key="canvasLocation" x="1076" y="129.98500749625188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="List" width="21" height="13"/>
+        <image name="World" width="25" height="25"/>
+    </resources>
 </document>

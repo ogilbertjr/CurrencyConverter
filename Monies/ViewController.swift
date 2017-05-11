@@ -39,8 +39,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource=self
+        tableView.dataSource = self
         tableView.delegate = self
+        
+        downloadCurrencyData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -50,29 +52,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func downloadCurrencyData () {
-        
+        countries.removeAll()
         
         if isoCodesString == "" {
             return
         } else {
             currencyURL = "\(preKeyURL)\(apiKey)\(currenciesString)\(isoCodesString)\(formatString)"
+            
         }
-        let dailyForecastURL = URL(string: currencyURL!)!
-        Alamofire.request(dailyForecastURL).responseJSON{ response in
-//            
-//            let result = response.result
-//            
-//            if let dict = result.value as? Dictionary<String, AnyObject> {
-//                if let list = dict["quotes"] as? [Dictionary<String, AnyObject>] {
-//                    for obj in list {
-//                        let forecast = Forecast(weatherDict: obj)
-//                        self.forecasts.append(forecast)
-//                        print(obj)
-//                    }
-//                    self.tableView.reloadData()
-//                }
-//            }
-//            completed()
+        let currenciesURL = URL(string: currencyURL!)!
+        Alamofire.request(currenciesURL).responseJSON{ response in
+            
+            let result = response.result
+
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                if let list = dict["quotes"] as? Dictionary<String, Double> {
+                    for (key,value) in list {
+                        let isoCodeFirstPosition = key.index(key.startIndex, offsetBy: 3)
+                        let extractedISOCode = key.substring(from: isoCodeFirstPosition)
+                        let rateAsString = "\(value)"
+                        let currencyName = self.currenciesInUse[extractedISOCode] //protocol
+                        let nation = countryNames[extractedISOCode]
+                        
+                        self.countries.append(Country(isoCode: extractedISOCode, nameOfCountry: nation!, nameOfCurrency: currencyName!, exchangeRate: rateAsString))
+                        
+                    }
+                    print(self.countries.count)
+                    self.tableView.reloadData()
+                }
+            }
+            
         }
 
     }
@@ -87,17 +96,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let currencyTextField = alertController.textFields![0] as UITextField
             
-            var addedCurrency = currencyTextField.text
+            let addedCurrency = currencyTextField.text
             
             if (addedCurrency?.isEmpty)! {
                 return
+            } else if self.searchForISOCode(code: addedCurrency!) {
+                //---------------ADDING CURRENCY HERE--------------//
+                self.addCurrencyInLanguage(for: addedCurrency!)
+                print(self.isoCodesString)
+            } else {
+                return
             }
             
-            
+            self.downloadCurrencyData()
             
            })
             
-            self.tableView.reloadData()
+        
             
     
         
@@ -112,6 +127,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
         
+    }
+    
+    func buildISOCodesString () -> String {
+        return isoCodesInUse.joined(separator: ",")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -134,6 +153,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deleteCurrencyInLanguage(for: countries[indexPath.row].code)
+            self.countries.remove(at: indexPath.row)
+            downloadCurrencyData()
+        }
+    }
+    
+    func searchForISOCode(code: String) -> Bool {
+        let isoCode = code.uppercased()
+        if isoCodesAvailable.contains(isoCode) {
+            return true
+        }
+        return false
+    }
 
     func addCurrencyMessageInLanguage() -> String {
         addCurrencyMessage = "Enter ISO code of the currency you would like to add (e.g. \"GBP\" for the British Pound Sterling)."
@@ -142,10 +181,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func deleteCurrencyInLanguage(for code: String) {
         
+        availableCurrencies[code] = currenciesInUse[code] //protocol
+        currenciesInUse.removeValue(forKey: code) //protocol
+        
+        isoCodesAvailable.append(code)
+        isoCodesInUse.remove(at: isoCodesInUse.index(of: code)!)
+        isoCodesString = self.buildISOCodesString()
+
     }
     
     func addCurrencyInLanguage(for code: String) {
+        let isoCode = code.uppercased()
+        currenciesInUse[isoCode] = availableCurrencies[isoCode] //protocol
+        availableCurrencies.removeValue(forKey: isoCode) //protocol
         
+        self.isoCodesInUse.append(isoCode)
+        self.isoCodesString = self.buildISOCodesString()
+        isoCodesAvailable.remove(at: isoCodesAvailable.index(of: isoCode)!)
     }
     
     func addTitleAlertInLanguage() -> String {

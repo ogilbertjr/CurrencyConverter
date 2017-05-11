@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var currencyURL:String?
     
     let preKeyURL = "http://apilayer.net/api/live?access_key="
-    let apiKey = "3b40a85bfcca86928b0bd2d99e74c7ec"
+    let apiKey = "[Your api key here]"
     let currenciesString = "&currencies="
     let formatString = "&format=1"
     
